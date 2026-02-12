@@ -56,12 +56,12 @@ const email = process.env.NEXT_PUBLIC_EMAIL || 'contato@conectalab.co';
 
 export default function HomePage() {
   return (
-    <div id="top" className="min-h-screen">
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-brand-border/60 bg-brand-bg/85 backdrop-blur-md">
-        <div className="section-shell flex h-16 items-center justify-between gap-4">
+    <div id="top" className="min-h-screen bg-brand-bg">
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-brand-border bg-white/95 backdrop-blur-sm">
+        <div className="section-shell flex h-20 items-center justify-between gap-4">
           <Logo />
           <nav aria-label="Navegação principal">
-            <ul className="flex items-center gap-4 text-sm text-brand-muted sm:gap-6">
+            <ul className="hidden items-center gap-6 text-sm text-brand-muted md:flex">
               {menuItems.map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className="focus-ring rounded-md px-1 py-1 transition hover:text-brand-text" aria-label={`Ir para seção ${item.label}`}>
@@ -74,29 +74,32 @@ export default function HomePage() {
         </div>
       </header>
 
-      <main className="pb-16 pt-24 sm:pt-28">
-        <section className="section-shell flex min-h-[70vh] items-center py-12 sm:py-16">
-          <div className="w-full rounded-2xl border border-brand-border bg-brand-panel/50 p-8 shadow-soft sm:p-12">
-            <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-brand-accent">Studio de automação e IA</p>
+      <main className="pb-20 pt-24 sm:pt-28">
+        <section className="section-shell flex min-h-[78vh] items-center py-16 sm:py-24">
+          <div className="w-full rounded-3xl border border-brand-border bg-brand-surface p-8 shadow-soft sm:p-14">
+            <div className="mb-8 flex justify-center sm:justify-start">
+              <Logo />
+            </div>
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-brand-accent">Studio estratégico de automação e IA</p>
             <h1 className="max-w-3xl text-3xl font-semibold leading-tight text-brand-text sm:text-5xl">
               Conectamos marcas a experiências inteligentes.
             </h1>
-            <p className="mt-5 max-w-2xl text-sm leading-relaxed text-brand-muted sm:text-lg">
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-brand-muted">
               A CONECTALAB desenvolve operações conversacionais para negócios digitais e serviços, unindo estratégia, tecnologia e linguagem humana para atendimento e crescimento.
             </p>
-            <div className="mt-8 flex flex-wrap items-center gap-3">
+            <div className="mt-9 flex flex-wrap items-center gap-3">
               <Link
                 href={whatsappUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="focus-ring inline-flex min-h-11 items-center justify-center rounded-xl bg-brand-accent px-6 text-sm font-medium text-brand-text transition hover:opacity-90"
+                className="focus-ring inline-flex min-h-11 items-center justify-center rounded-xl bg-brand-accent px-6 text-sm font-medium text-white transition hover:opacity-95"
                 aria-label="Falar no WhatsApp da ConectaLab"
               >
                 Falar no WhatsApp
               </Link>
               <Link
                 href="#"
-                className="focus-ring inline-flex min-h-11 items-center justify-center rounded-xl border border-brand-border px-6 text-sm font-medium text-brand-text transition hover:border-brand-accent"
+                className="focus-ring inline-flex min-h-11 items-center justify-center rounded-xl border border-brand-border bg-white px-6 text-sm font-medium text-brand-text transition hover:border-brand-accent"
                 aria-label="Ver portfólio da ConectaLab"
               >
                 Ver portfólio
@@ -105,15 +108,15 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="servicos" className="section-shell py-12 sm:py-16">
+        <section id="servicos" className="section-shell section-divider py-16 sm:py-20">
           <SectionHeading
             label="Serviços"
             title="Soluções para atendimento inteligente e operação eficiente"
             description="Projetamos e implementamos sistemas conversacionais focados em resultado, sem complexidade desnecessária."
           />
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
-              <article key={service.title} className="rounded-2xl border border-brand-border bg-brand-panel/70 p-5 shadow-soft">
+              <article key={service.title} className="rounded-2xl border border-brand-border bg-white p-6 shadow-soft">
                 <h3 className="text-base font-semibold text-brand-text">{service.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-brand-muted">{service.description}</p>
               </article>
@@ -121,15 +124,15 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="como-funciona" className="section-shell py-12 sm:py-16">
+        <section id="como-funciona" className="section-shell section-divider py-16 sm:py-20">
           <SectionHeading
             label="Como funciona"
             title="Processo simples, execução rápida"
             description="Mantemos uma estrutura clara em três etapas para acelerar implementação e gerar evolução contínua."
           />
-          <div className="grid gap-4 sm:grid-cols-3">
+          <div className="grid gap-5 sm:grid-cols-3">
             {steps.map((step, index) => (
-              <article key={step.title} className="rounded-2xl border border-brand-border bg-brand-panel/70 p-5">
+              <article key={step.title} className="rounded-2xl border border-brand-border bg-white p-6 shadow-soft">
                 <p className="text-xs uppercase tracking-[0.18em] text-brand-accent">Etapa {index + 1}</p>
                 <h3 className="mt-2 text-base font-semibold text-brand-text">{step.title}</h3>
                 <p className="mt-3 text-sm text-brand-muted">{step.description}</p>
@@ -138,14 +141,14 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="sobre" className="section-shell py-12 sm:py-16">
+        <section id="sobre" className="section-shell section-divider py-16 sm:py-20">
           <SectionHeading label="Sobre" title="Tech consultiva com visão prática" />
-          <p className="max-w-3xl text-sm leading-relaxed text-brand-muted sm:text-base">
-            A ConectaLab é uma consultoria boutique de tecnologia conversacional. Atuamos com clareza, rapidez e foco em resultados reais, traduzindo inovação em operações que funcionam no dia a dia. Nosso compromisso é entregar qualidade técnica com comunicação humana e parceria próxima.
+          <p className="max-w-3xl text-base leading-relaxed text-brand-muted">
+            A CONECTALAB é uma consultoria boutique de tecnologia conversacional. Atuamos com clareza, rapidez e foco em resultados reais, traduzindo inovação em operações que funcionam no dia a dia. Nosso compromisso é entregar qualidade técnica com comunicação humana e parceria próxima.
           </p>
         </section>
 
-        <section id="contato" className="section-shell py-12 sm:py-16">
+        <section id="contato" className="section-shell section-divider py-16 sm:py-20">
           <SectionHeading
             label="Contato"
             title="Vamos conversar sobre seu projeto"
@@ -158,8 +161,8 @@ export default function HomePage() {
         </section>
       </main>
 
-      <footer className="border-t border-brand-border/70 py-6">
-        <div className="section-shell flex items-center justify-between gap-3">
+      <footer className="border-t border-brand-border py-8">
+        <div className="section-shell flex flex-wrap items-center justify-between gap-4">
           <Logo compact />
           <p className="text-xs text-brand-muted">© {new Date().getFullYear()} CONECTALAB. Todos os direitos reservados.</p>
         </div>

@@ -8,7 +8,7 @@ type ContactButtonsProps = {
 };
 
 const buttonStyle =
-  'focus-ring inline-flex min-h-11 items-center justify-center rounded-xl border border-brand-border bg-brand-panel px-5 text-sm font-medium text-brand-text transition duration-200 hover:-translate-y-0.5 hover:border-brand-accent hover:bg-brand-panel/90';
+  'focus-ring inline-flex min-h-11 items-center justify-center rounded-xl border border-brand-border bg-white px-5 text-sm font-medium text-brand-text transition duration-200 hover:-translate-y-0.5 hover:border-brand-accent';
 
 export function ContactButtons({ instagramUrl, linkedinUrl, whatsappUrl, email }: ContactButtonsProps) {
   return (

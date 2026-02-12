@@ -6,7 +6,7 @@ Landing page institucional de 1 página, desenvolvida com Next.js (App Router), 
 
 O projeto foi pensado para uso institucional e presença online da CONECTALAB, com foco em:
 
-- visual minimalista e premium;
+- visual minimalista, premium e claro;
 - leitura rápida em mobile;
 - CTA principal para WhatsApp;
 - seções essenciais para cadastro e validação em plataformas como Meta.
@@ -74,6 +74,7 @@ O projeto possui fallback padrão para os links caso as variáveis não sejam de
   - `components/copy-email-button.tsx`
 - Estilos globais e tokens utilitários: `app/globals.css`
 - Paleta e tema do Tailwind: `tailwind.config.ts`
+- Logo oficial: `public/logo.svg`
 - Favicon: `public/favicon.svg`
 
 ## Observações
